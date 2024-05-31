@@ -1,0 +1,160 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title SAMZE Movie Database
+  link(rel='shortcut icon' type='image/x-icon' href='/pictures/DBLogo.png')
+  // Custom CSS
+  link(rel='stylesheet' href='/mainCSS/movieInfoStyles.css')
+  link(rel='stylesheet' href='/mainCSS/navbarStyles.css')
+  link(href='/css/bootstrap.css' rel='stylesheet')
+  link(href='/css/bootstrap-grid.min.css' rel='stylesheet')
+  // Material Design Bootstrap
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css' rel='stylesheet')
+
+include ../partials/header
+
+br 
+br
+.container
+  .main-body
+    .row.gutters-sm
+      .col-md-4.mb-3
+        .card
+          .card-body
+            .d-flex.flex-column.align-items-center.text-center
+              img(src= movie.Poster alt='Admin' width='150')
+              .mt-3
+                h4 #{movie.Title}
+                p.text-secondary.mb-1 Runtime: #{movie.Runtime}
+                p.text-muted.font-size-sm Released Data: #{movie.Released}
+                if(avgRating === "0/10")
+                  p.text-muted.font-size-sm No average rating... yet!
+                else
+                  p.text-muted.font-size-sm Average Score: #{avgRating}
+                if (user.movies_watched.includes(movie.Title))
+                  form(style="width: 200px height: 100px;" method ='post')
+                    button.btn.btn-outline-danger.m-sm-auto(type='submit' name = 'movieUnwatched' value = movie.Title style="width: 100%; height: 70px;") I want to Unwatch? 
+                else
+                  form(style="width: 200px; height: 100px;" method ='post')
+                   button.btn.btn-outline-primary.m-sm-auto(type='submit' name = 'movieWatched' value = movie.Title style="width: 100%; height: 70px;") Add to Watched List! 
+                if(user.isContributingUser)
+                  a(href= '/movieList/' + movie.Title + '/updateMovie')
+                    button.btn.btn-outline-primary.m-sm-auto Update Movie!
+                  //form(action= '/movieList/' + movie.Title + '/deleteMovie' method ='post')
+                    button.btn.btn-outline-danger.m-sm-auto(type='submit' name = 'delete') Delete Movie!
+        
+      
+      .col-md-8
+        .card.mb-3
+          .card-body
+            .row
+              .col-sm-3
+                h6.mb-0 Director                  
+              .col-sm-9.text-secondary
+                for actor in actors 
+                  a(href= '/actorList/' + actor)
+                    button.btn.btn-info.btn-md(type='button') #{actor} 
+            hr
+            .row
+              .col-sm-3
+                h6.mb-0 Director
+              .col-sm-9.text-secondary
+                for director in directors 
+                  a(href= '/directorList/' + director)
+                    button.btn.btn-info.btn-md(type='button') #{director}
+            hr
+            .row
+              .col-sm-3
+                h6.mb-0 Writers
+              .col-sm-9.text-secondary
+                for writer in writers 
+                  a(href= '/writerList/' + writer)
+                    button.btn.btn-info.btn-md(type='button') #{writer}
+            hr
+            .row
+              .col-sm-3
+                h6.mb-0 Plot
+              .col-sm-9.text-secondary
+                | #{movie.Plot}
+            hr
+            .row
+              .col-sm-3
+                h6.mb-0 Genre
+              .col-sm-9.text-secondary
+                | #{movie.Genre}
+
+
+          .card.mt-3
+          ul.list-group.list-group-flush
+            li.list-group-item.d-flex.justify-content-between.align-items-center.flex-wrap
+              h6.mb-0
+                |
+              a(href='/movieList/' + movie.Title + '/reviews')
+                | See reviews for this movie! 
+                span.text-secondary
+            
+div#reviewSection
+  if(reviews.length == 0)
+    h2(style='text-align:center')
+      b  Looks like there's no reviews for #{movie.Title} just yet!
+
+  else
+    h2(style='text-align:center')
+      b  Featured reviews:   
+    for review, index in reviews
+      .container-fluid.px-0.py-5.mx-auto
+      .row.justify-content-center.mx-0.mx-md-auto
+        .col-lg-10.col-md-11.px-1.px-sm-2
+          .card.border-0.px-3
+            // top row
+            .d-flex.row.py-5.px-5.bg-light
+              .white-tab.p-2.px-3.mx-2
+                p.sm-text.mb-0 MOVIE
+                h4 #{ review.movie }
+              .white-tab.p-2.mx-2
+                p.sm-text.mb-0.text-muted SCORE
+                h4.green-text #{ review.score }
+              .ml-md-auto.p-2.mx-md-2.pt-4.pt-md-3
+                a(href= '/users/' + review.creator class='button.btn.btn-primary.px-4') BACK TO USER
+            
+
+              
+            // Review by user
+            .review.p-5
+              .row.d-flex
+                .profile-pic
+                  if(users[index].isContributingUser)
+                    img(src='/pictures/contributeUser.png' width='60px' height='60px')
+                  else
+                    img(src='/pictures/normalUser.png' width='60px' height='60px')
+                
+                .d-flex.flex-column.pl-3
+                  h4 #{ review.creator }
+                  if(users[index].isContributingUser)
+                    p.grey-text Contributing User
+                  else
+                    p.grey-text Normal User
+                
+          
+              .row.pb-3
+                p #{review.text}
+
+div#movieList
+  h1(style='text-align: left;')
+    b If you are interested in #{movie.Title} ...
+  div.row#briefInfo
+    each recom in recommended
+        div.column
+          div.container  
+            h3#movieName #{recom.Title}
+            a#imageLink(href ='/movieList/' + recom.Title)
+              img.image(src= recom.Poster, alt="" width="200px" height = "300px")
+            div.middle
+              a#imageLink(href ='/movieList/' +  recom.Title)
+                div.text View More
+            
+
+
+
+include ../partials/footer

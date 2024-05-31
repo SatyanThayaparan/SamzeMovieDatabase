@@ -1,0 +1,14 @@
+/*STYLES FOR PAGINATION*/
+
+#parent
+{
+    text-align: center;
+    position: relative;
+}
+
+#child
+{
+    width: 12.5%;
+    margin:  auto;
+}
+

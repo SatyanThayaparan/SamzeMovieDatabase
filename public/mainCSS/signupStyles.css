@@ -1,0 +1,109 @@
+/* NAVBAR STYLING */
+
+#LogoName
+{
+   font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  float: left;
+  padding: 10px;
+
+
+}
+
+#logoImage
+{
+  float: left;
+  width: 150px;
+  height: 150px;
+}
+
+
+.nav-item 
+{
+  font-size: 1.2rem;
+  padding: 15px;
+ 
+  
+}
+
+#searchButton
+{
+ padding-left: 10px;
+ padding-right: 10px;
+ display: inline-block;
+ 
+ 
+
+}
+
+
+#navbarToggler
+{
+  text-align: center;
+}
+
+#centerForm
+{
+  display: inline-flex;
+  justify-content: center;
+ 
+}
+
+/* BODY STYLING */
+
+
+#myBox
+{
+    width: 55%;
+    height:400px;
+    position: relative;
+    top: 50%;
+    left: 30%;
+ /* -1/2 width */
+  margin-top: 100px;
+  /* -1/2 height */
+    background-color:rgb(235, 235, 235); 
+    border:1px solid #000;
+
+}
+
+
+#Form
+{
+    margin-top: 50px;
+    margin-left: 70px;
+    text-align: left;
+
+    
+   
+}
+#signUpBox
+{
+    margin-left: 10px;
+    margin-bottom: 50px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+   
+}
+
+#inputUsername, #inputPassword
+{
+    margin-bottom: 15px;
+    margin-left: 10px;
+   
+    
+}
+
+#submitButton
+{
+    margin-left: 15px;
+    margin-top: 40px;
+}
+
+#centering
+{
+    margin-left: 40px;
+    margin-top: 50px;
+}

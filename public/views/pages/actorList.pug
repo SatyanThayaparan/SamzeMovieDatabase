@@ -1,0 +1,69 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title SAMZE Movie Database
+  link(rel='shortcut icon' type='image/x-icon' href='/pictures/DBLogo.png')
+  // Custom CSS
+  link(rel='stylesheet' href='/mainCSS/navbarStyles.css')  
+  link(rel='stylesheet' href='/mainCSS/movieListStyles.css')
+  link(rel='stylesheet' href='/mainCSS/personListStyles.css')
+  link(href='/css/bootstrap.css' rel='stylesheet')
+  link(href='/css/bootstrap-grid.min.css' rel='stylesheet')
+  // Material Design Bootstrap
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css' rel='stylesheet')
+
+include ../partials/header
+
+// Actor List
+#actorList.card.mb-3
+  h1(style='text-align:center')
+    br
+    b List of Actors
+
+  br
+  #myBox
+    #signUpBox
+      form#Form.form-row(action = '/actorList/' method ='post')
+        .form-group.mx-md-3.mb-2
+          label(for='inputUserName') Search for a Actor: 
+          input#inputUserName.form-control(type='text' name='actor' placeholder='')
+
+  each actor in actors
+    .container
+      .card.mt-5.border-5.pt-2.active.pb-0.px-3
+        .card-body
+          .row
+            .col-12
+              h4.card-title
+                b #{actor.name}
+            .col
+              h6.card-subtitle.mb-2.text-muted
+                p.card-text.text-muted.small
+                  span.font-weight-bold Followers: #{actor.followers.length}
+                  
+        .card-footer.bg-white.px-0
+          .row
+            .col-md-auto
+              a.btn.btn-outlined.btn-black.text-muted.bg-transparent(href= '/actorList/'+ actor.name data-wow-delay='0.7s')
+                small(style = 'color: white;') Visit Profile 
+
+br 
+br
+
+div#parent
+  div#child
+    nav#paginationTemp(aria-label='Page navigation example')
+    ul.pagination
+      if current > 1
+        - let url = "http://localhost:3000/actorList?page=" + (current-1)
+        - if(qstring.length > 0){ url += "&" + qstring; }
+        li.page-item
+        a.page-link(href= url) Previous
+
+      - url = "http://localhost:3000/actorList?page=" + (current+1)
+      - if(qstring.length > 0){ url += "&" + qstring; }
+        li.page-item
+          a.page-link(href = url) Next
+            
+include ../partials/footer

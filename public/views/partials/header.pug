@@ -1,0 +1,51 @@
+// NAVBAR
+if(userisLoggedIn)
+  nav#navbar.navbar.navbar-expand-xl.navbar-light.bg-white
+    a(href='/')
+      img#logoImage(src='/pictures/DBLogo.png')
+    .animated.bounce
+      a#LogoName.navbar-brand(href='/') Samze&apos;s Movie Review
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarToggler' aria-controls='navbarTogglerDemo02' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarToggler.collapse.navbar-collapse.navbar-toggler-
+      ul#menuItems.navbar-nav.mr-auto.mt-2.mt-lg-0
+        li.nav-item
+          a.nav-link(href='/movieList') Movies
+        li.nav-item
+          a.nav-link(href='/actorList') Actors
+        li.nav-item
+          a.nav-link(href='/directorList') Directors
+        li.nav-item
+          a.nav-link(href='/writerList') Writers
+        li.nav-item
+          a.nav-link(href='/users') Users
+        if(user.isContributingUser)
+          li.nav-item
+            a.nav-link(href='/createPerson') Add Person
+          li.nav-item
+            a.nav-link(href='/createMovies') Create Movie
+        li.nav-item
+          a.nav-link(href='/createReviews') Create Review
+     
+        li.nav-item
+          a.nav-link(href='/logout') Log-out
+        li.nav-item
+          a.nav-link(href='/users/' + user.username) My profile
+      #centerForm
+        
+else
+  nav#navbar.navbar.navbar-expand-xl.navbar-light.bg-white
+    a(href='/')
+      img#logoImage(src='/pictures/DBLogo.png')
+    .animated.bounce
+      a#LogoName.navbar-brand(href='/') Samze&apos;s Movie Review
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarToggler' aria-controls='navbarTogglerDemo02' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarToggler.collapse.navbar-collapse.navbar-toggler-
+      ul#menuItems.navbar-nav.mr-auto.mt-2.mt-lg-0
+
+        li.nav-item
+          a.nav-link(href='/login') Login
+        li.nav-item
+          a.nav-link(href='/signup') Signup
+      #centerForm

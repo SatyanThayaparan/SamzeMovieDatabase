@@ -1,0 +1,62 @@
+/* NAVBAR STYLING */
+
+#LogoName
+{
+   font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  float: left;
+  padding: 10px;
+
+
+}
+
+#logoImage
+{
+  float: left;
+  width: 150px;
+  height: 150px;
+}
+
+
+.nav-item 
+{
+  font-size: 1.2rem;
+  padding: 15px;
+ 
+  
+}
+
+#searchButton
+{
+ padding-left: 10px;
+ padding-right: 10px;
+ display: inline-block;
+ 
+ 
+
+}
+
+
+#navbarToggler
+{
+  text-align: center;
+}
+
+#centerForm
+{
+  display: inline-flex;
+  justify-content: center;
+ 
+}
+
+
+/* BODY STYLING */
+
+#profile
+{
+    left: 30%;
+    width: 50rem;
+   
+    margin-top: 30px;
+}

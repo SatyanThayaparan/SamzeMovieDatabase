@@ -1,0 +1,39 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title SAMZE Movie Database
+  link(rel='shortcut icon' type='image/x-icon' href='/pictures/DBLogo.png')
+  // Custom CSS
+  link(rel='stylesheet' href='/mainCSS/signupStyles.css')
+  link(href='/css/bootstrap.css' rel='stylesheet')
+  link(href='/css/bootstrap-grid.min.css' rel='stylesheet')
+  // Material Design Bootstrap
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css' rel='stylesheet')
+
+include ../partials/header
+
+// LOGIN | SIGN-UP BOX
+#myBox
+  #signUpBox
+    h2
+      b Sign-Up for a User Account!
+    h5 Please join Samze! We&apos;d love to hear your reviews!
+    form#Form.form-row(action = '/signup' method ='post')
+      .form-group.mx-md-3.mb-2
+        label(for='inputUserName') Create Username: 
+        input#inputUserName.form-control(type='text' name='username' placeholder='' required)
+      .form-group.mx-md-3.mb-2
+        label(for='inputPassword') Create Password: 
+        input#inputPassword.form-control(type='password' name='password' placeholder='' required)
+      #centering
+        input#contributeUserCheckBox.form-check-input(type='checkbox' name='isContributingUser' value='true')
+        label.form-check-label(for='contributeUserCheckBox')
+          | Become a Contributing User?
+      button#submitButton.btn.btn-primary.mb-2(type='submit') Confirm!
+    include ../partials/layout
+
+
+
+include ../partials/footer
+

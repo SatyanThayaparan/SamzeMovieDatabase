@@ -1,0 +1,171 @@
+/* NAVBAR STYLING */
+.navbar
+{
+    width: 101%;
+}
+
+#LogoName
+{
+   font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  float: left;
+  padding: 10px;
+
+
+}
+
+#logoImage
+{
+  float: left;
+  width: 150px;
+  height: 150px;
+}
+
+
+.nav-item 
+{
+  font-size: 1.2rem;
+  padding: 15px;
+ 
+  
+}
+
+#searchButton
+{
+ padding-left: 10px;
+ padding-right: 10px;
+ display: inline-block;
+ 
+ 
+
+}
+
+
+#navbarToggler
+{
+  text-align: center;
+}
+
+#centerForm
+{
+  display: inline-flex;
+  justify-content: center;
+ 
+}
+
+#reviewSection
+{
+  margin-top: 450px;
+  
+}
+
+/* MOVIE INFORMATION PAGE STYLING */
+
+.img {
+  
+    width: 50%;
+    
+  }
+
+
+#movieInfo
+{
+    position: relative;
+    margin-top: 30px;
+    margin-left: 40px;
+ 
+}
+
+#movieName
+{
+  margin-top: 65px;
+}
+
+.card
+{
+    margin: 0 auto;
+    width: 70%;
+}
+
+.h2
+{
+  margin-top: 100px;
+}
+
+/* MOVIE LIST STYLING */
+
+.column 
+{
+  text-align: center;
+  float: left;
+  width: 20%;
+
+}
+
+#movieList
+{
+  margin-top: 50px;
+  margin-left: 55px;
+}
+
+.row::after 
+{
+  content: "";
+  clear: both;
+  display: table;
+}
+.container {
+
+  position: relative;
+  width: 100%;
+  height: 400px;
+  max-width: 400px;
+}
+
+.image{
+  opacity: 1;
+  display: block; 
+  transition: .5s ease;
+  backface-visibility: hidden;
+  transition: .5s ease;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#imageLink{
+
+  width: 100%;
+  height: 100%;
+}
+
+.middle {
+  transition: .5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.text {
+  color: black;
+  font-size: 28px;
+  padding: 16px 32px;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}

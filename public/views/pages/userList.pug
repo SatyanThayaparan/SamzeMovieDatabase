@@ -1,0 +1,64 @@
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title SAMZE Movie Database
+  link(rel='shortcut icon' type='image/x-icon' href='/pictures/DBLogo.png')
+  // Custom CSS
+  link(rel='stylesheet' href='/mainCSS/userList.css')
+  link(href='/css/bootstrap.css' rel='stylesheet')
+  link(href='/css/bootstrap-grid.min.css' rel='stylesheet')
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css' rel='stylesheet')
+
+include ../partials/header
+
+include ../partials/layout
+
+#myBox
+  #signUpBox
+    form#Form.form-row(action = '/users' method ='post')
+      .form-group.mx-md-3.mb-2
+        label(for='inputUserName') Search for a User: 
+        input#inputUserName.form-control(type='text' name='username' placeholder='')
+      
+
+
+for user in users  
+  .container
+    .card.mt-5.border-5.pt-2.active.pb-0.px-3
+      .card-body
+        .row
+          .col-12
+            h4.card-title
+              b #{ user.username }
+          .col
+            h6.card-subtitle.mb-2.text-muted
+              p.card-text.text-muted.small
+                if user.isContributingUser
+                  img#star.mr-1(src='/pictures/contributeUser.png' width='19' height='19')
+                  span.vl.mr-2.ml-0 Contributing User
+               
+                else
+                  img#star.mr-1(src='/pictures/normalUser.png' width='19' height='19')
+                  span.vl.mr-2.ml-0 Normal User
+            
+                span.font-weight-bold Following: #{user.following.length} | Followers: #{user.followers.length} | Reviews made: #{user.reviews.length} | Movies watched: #{user.movies_watched.length}
+                
+      .card-footer.bg-white.px-0
+        .row
+          .col-md-auto
+            a.btn.btn-outlined.btn-blue.text-muted.bg-transparent(href=user.username data-wow-delay='0.7s')
+              img(src='https://img.icons8.com/ios/50/000000/settings.png' width='19' height='19')
+              small(style = 'color: white;') Visit Profile 
+
+          
+if current > 1
+  - let url = "http://localhost:3000/users?page=" + (current-1)
+  - if(qstring.length > 0){ url += "&" + qstring; }
+  a(href=url) Previous
+  | 
+- url = "http://localhost:3000/users?page=" + (current+1)
+- if(qstring.length > 0){ url += "&" + qstring; }
+a(href=url) Next
+
+
+include ../partials/footer           

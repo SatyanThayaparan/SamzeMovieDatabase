@@ -1,0 +1,156 @@
+/* NAVBAR STYLING */
+
+
+#LogoName
+{
+   font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  float: left;
+  padding: 10px;
+
+
+}
+
+#logoImage
+{
+  float: left;
+  width: 150px;
+  height: 150px;
+}
+
+
+.nav-item 
+{
+  font-size: 1.2rem;
+  padding: 15px;
+ 
+  
+}
+
+#searchButton
+{
+ padding-left: 10px;
+ padding-right: 10px;
+ display: inline-block;
+ 
+ 
+
+}
+
+
+#navbarToggler
+{
+  text-align: center;
+}
+
+#centerForm
+{
+  display: inline-flex;
+  justify-content: center;
+ 
+}
+
+/* BODY STYLING */
+
+
+
+/*firstContectSection Container */
+
+
+#implementCarousel {
+ 
+  max-width: 800px;
+ 
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-top: 60px;
+  margin-left: -390px;
+
+}
+.carousel-item 
+{
+  margin-bottom: 50px;
+}
+
+.carousel-control-next-icon
+{
+  background-image: url(next.png) !important;
+  background-color: black;
+
+  align-self: flex-end;
+  
+}
+
+.carousel-control-prev-icon {
+  background-image: url(previous.png) !important;  
+  background-color: black;
+  align-self: flex-end;
+  
+ 
+}
+
+
+
+#carouselText
+{
+  text-align: center;
+}
+
+/* SECOND SECTION STYLING */
+#SecondSection{
+  position: relative;
+  margin-top: 100px;
+  left: 1%;
+  right: 1%;
+  
+}
+
+#secondSectionHeader
+{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card-body
+{
+ 
+  height: 30%;
+}
+
+
+
+
+/*THIRD SECTION STYLING*/
+#thirdSection{
+  position: relative;
+  display: inline-flex;
+  left: 15%;
+  margin: 10px;
+
+}
+
+ #contributeUserImg
+{
+  width: 80%;
+  height: 80%;
+}
+
+#normUserImg{
+  width: 75%;
+  height: 75%;
+}
+
+
+
+#contributingUser
+{
+  left: 50%;
+  padding: 100px;
+}
+
+#normalUser
+{
+  padding: 100px;
+}

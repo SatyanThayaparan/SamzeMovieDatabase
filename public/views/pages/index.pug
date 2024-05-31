@@ -1,0 +1,62 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title SAMZE Movie Database
+  link(rel='shortcut icon' type='image/x-icon' href='/pictures/DBLogo.png')
+  // Custom CSS
+  link(rel='stylesheet' href='/mainCSS/indexStyles.css')
+  link(href='/css/bootstrap.css' rel='stylesheet')
+  link(href='/css/bootstrap-grid.min.css' rel='stylesheet')
+  // Material Design Bootstrap
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css' rel='stylesheet')
+
+include ../partials/header
+
+#implementCarousel.carousel.slide(data-ride='carousel')
+  h2#carouselText
+    b Create Insightful Reviews
+    br
+  .carousel-inner
+    .carousel-item.active
+      img.d-block.w-100(src='pictures/firstReview.jpg' alt='First slide')
+    .carousel-item
+      img.d-block.w-100(src='pictures/secondReview .jpg' alt='Second slide')
+    .carousel-item
+      img.d-block.w-100(src='pictures/thirdReview.jpg' alt='Third slide')
+  a.carousel-control-prev(href='#implementCarousel' role='button' data-slide='prev')
+    span.carousel-control-prev-icon(aria-hidden='true')
+    span.sr-only Previous
+  a.carousel-control-next(href='#implementCarousel' role='button' data-slide='next')
+    span.carousel-control-next-icon(aria-hidden='true')
+    span.sr-only Next
+#SecondSection
+  h2#secondSectionHeader
+    b Follow Your Favourite Actor, Director, and/or Writer
+  .card-deck
+    .card
+      img.card-img-top(src='pictures/actor.jpg' alt='Card image cap')
+      .card-body
+        h5.card-title Stay updated with an Actor&apos;s work
+        p.card-text
+          | You can see an Actor&apos;s past work, and Contributing Users can add new roles that they play in! It&apos;s the gift that keeps on giving!
+      .card-footer
+        small.text-muted
+    .card
+      img.card-img-top(src='pictures/director.png' alt='Card image cap')
+      .card-body
+        h5.card-title See Real Connections
+        p.card-text
+          | When visiting any writer, director, or actor&apos;s page, you get to see who they worked with! You&apos;ll also get recommendations of related writers, actors, movies, and/or directors depending on what page(s) you visit.
+      .card-footer
+        small.text-muted
+    .card
+      .card-body
+        img.card-img-top(src='pictures/writer.jpg' alt='Card image cap')
+        h5.card-title It&apos;s Your Choice
+        p.card-text
+          | You want to see your favourite genre? Sure. You want to see any related movies to your favourite movie? Why not. It&apos;s YOUR choice at Samze&apos;s!
+      .card-footer
+        small.text-muted
+
+include ../partials/footer

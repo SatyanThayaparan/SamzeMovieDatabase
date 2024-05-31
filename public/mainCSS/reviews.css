@@ -1,0 +1,104 @@
+/* NAVBAR STYLING */
+
+#LogoName
+{
+   font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  float: left;
+  padding: 10px;
+
+
+}
+
+#logoImage
+{
+  float: left;
+  width: 150px;
+  height: 150px;
+}
+
+
+.nav-item 
+{
+  font-size: 1.2rem;
+  padding: 15px;
+ 
+  
+}
+
+#searchButton
+{
+ padding-left: 10px;
+ padding-right: 10px;
+ display: inline-block;
+
+
+}
+
+
+
+
+.sm-text {
+    font-size: 10px;
+    letter-spacing: 1px
+}
+
+.sm-text-1 {
+    font-size: 14px
+}
+
+.green-tab {
+    background-color: #00C853;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 3px 5px 3px
+}
+
+.btn-red {
+    background-color: #E64A19;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+    outline: none
+}
+
+.btn-red:hover {
+    background-color: #BF360C
+}
+
+.btn-red:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+.round-icon {
+    font-size: 40px;
+    padding-bottom: 10px
+}
+
+
+.grey-text {
+    color: #BDBDBD
+}
+
+.green-text {
+    color: #4CAF50
+}
+
+.block {
+    border-right: 1px solid #F5EEEE;
+    border-top: 1px solid #F5EEEE;
+    border-bottom: 1px solid #F5EEEE
+}
+
+.profile-pic img {
+    border-radius: 50%
+}
+
+.rating-dot {
+    letter-spacing: 5px
+}
+

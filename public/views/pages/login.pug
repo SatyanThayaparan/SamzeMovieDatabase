@@ -1,0 +1,33 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title SAMZE Movie Database
+  link(rel='shortcut icon' type='image/x-icon' href='/pictures/DBLogo.png')
+  // Custom CSS
+  link(rel='stylesheet' href='/mainCSS/loginStyles.css')
+  link(href='/css/bootstrap.css' rel='stylesheet')
+  link(href='/css/bootstrap-grid.min.css' rel='stylesheet')
+  // Material Design Bootstrap
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css' rel='stylesheet')
+
+include ../partials/header
+
+// LOGIN | SIGN-UP BOX
+#myBox
+  #loginBox
+    h2
+      b Login
+    h5 If you&apos;re already a user, please login!
+    form#Form.form-row(action = '/login' method ='post')
+      .form-group.mx-md-3.mb-2
+        label(for='loginUserName')  Username: 
+        input#loginUserName.form-control(type='text' placeholder='' name='username' required)
+      .form-group.mx-md-3.mb-2
+        label(for='loginUserName') Password: 
+        input#loginPassword.form-control(type='password' placeholder='' name='password' required)
+      button#LoginButton.btn.btn-outline-primary.m-sm-auto(type='submit') Login!
+    include ../partials/layout
+
+include ../partials/footer
+

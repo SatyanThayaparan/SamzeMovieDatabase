@@ -1,0 +1,57 @@
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title SAMZE Movie Database
+  link(rel='shortcut icon' type='image/x-icon' href='/pictures/DBLogo.png')
+  // Custom CSS
+  link(rel='stylesheet' href='/mainCSS/reviews.css')
+  link(href='/css/bootstrap.css' rel='stylesheet')
+  link(href='/css/bootstrap-grid.min.css' rel='stylesheet')
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css' rel='stylesheet')
+
+include ../partials/header
+if(reviews.length == 0)
+  h1(style='text-align:center')
+    b  Looks like there's no reviews for this movie just yet!
+
+
+for review, index in reviews
+   .container-fluid.px-0.py-5.mx-auto
+   .row.justify-content-center.mx-0.mx-md-auto
+    .col-lg-10.col-md-11.px-1.px-sm-2
+      .card.border-0.px-3
+        // top row
+        .d-flex.row.py-5.px-5.bg-light
+          .white-tab.p-2.px-3.mx-2
+            p.sm-text.mb-0 MOVIE
+            h4 #{ review.movie }
+          .white-tab.p-2.mx-2
+            p.sm-text.mb-0.text-muted OVERALL SCORE
+            h4.green-text #{ review.score }
+          .ml-md-auto.p-2.mx-md-2.pt-4.pt-md-3
+            a(href= '/users/' + review.creator class='button.btn.btn-primary.px-4') BACK TO USER
+         
+
+          
+        // Review by user
+        .review.p-5
+          .row.d-flex
+            .profile-pic
+              if(users[index].isContributingUser)
+                img(src='/pictures/contributeUser.png' width='60px' height='60px')
+              else
+                img(src='/pictures/normalUser.png' width='60px' height='60px')
+            
+            .d-flex.flex-column.pl-3
+              h4 #{ review.creator }
+              if(users[index].isContributingUser)
+                p.grey-text Contributing User
+              else
+               p.grey-text Normal User
+            
+       
+          .row.pb-3
+            p #{review.text}
+          
+
+include ../partials/footer           

@@ -1,0 +1,58 @@
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title SAMZE Movie Database
+  link(rel='shortcut icon' type='image/x-icon' href='/pictures/DBLogo.png')
+  // Custom CSS
+  link(rel='stylesheet' href='/mainCSS/createReviews.css')
+  link(href='/css/bootstrap.css' rel='stylesheet')
+  link(href='/css/bootstrap-grid.min.css' rel='stylesheet')
+ 
+include ../partials/header
+include ../partials/layout
+if(movie)
+    .container
+        form(method ='post')
+            .form-row
+                .form-group.col-md-3
+                    label(for='') Movie Title
+                    input.form-control(type='text' value = movie.Title placeholder='Example: Toy Story' name='movieTitle' required) 
+                .form-group.col-md-3
+                    label(for='') Release Date
+                    input.form-control(type='text' value = movie.Released placeholder='Example: 2020' name='releaseDate' required)
+                .form-group.col-md-3
+                    label(for='') Age Restriction Rating
+                    input.form-control(type='text' value = movie.Rated placeholder='Example: G' name='rating' required)
+                .form-group.col-md-3
+                    label(for='') Runtime
+                    input.form-control(type='text' value = movie.Runtime placeholder='Example: 120' name='runtime' required)
+            .form-group
+                label(for='') Actors
+                input.form-control(type='text' value = movie.Actors placeholder='Example: John Doe, Steve Brad, Martin King' name='actors' required)
+            .form-group
+                label(for='') Directors
+                input.form-control(type='text' value = movie.Director placeholder='Example Christopher Nolan' name='director' required)
+            .form-group
+                label(for='') Writers
+                input.form-control(type='text' value = movie.Writer placeholder='Example: John Doe, Steve Brad, Martin King' name='writers' required)
+            .form-group
+                label(for='') Genres
+                input.form-control(type='text' value = movie.Genre placeholder='Example: Action, Comedy, Adventure' name='genres' required)
+            .form-group
+                label(for='') Plot
+                textarea.form-control(type = 'text' rows='3' name='plot' required) #{movie.Plot}
+            .form-group
+                label(for='') Poster URL
+                input.form-control(type='text' value = movie.Poster placeholder='' name='poster' required)
+            .form-row
+                .form-group.col-md-3
+                    label(for='') Language
+                    input.form-control(type='text' value = movie.Language placeholder='English...' name='language' required)
+                .form-group.col-md-3
+                    label(for='') Country
+                    input.form-control(type='text' value = movie.Country placeholder='Canada...' name='country' required)
+            button#LoginButton.btn.btn-outline-primary.m-sm-auto(type='submit') Update Movie!
+
+                
+
+include ../partials/footer

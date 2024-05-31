@@ -1,0 +1,202 @@
+/* NAVBAR STYLING */
+.navbar
+{
+    width: 101%;
+}
+
+#LogoName
+{
+   font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  float: left;
+  padding: 10px;
+
+
+}
+
+#logoImage
+{
+  float: left;
+  width: 150px;
+  height: 150px;
+}
+
+
+.nav-item 
+{
+  font-size: 1.2rem;
+  padding: 15px;
+ 
+  
+}
+
+#searchButton
+{
+ padding-left: 10px;
+ padding-right: 10px;
+ display: inline-block;
+ 
+ 
+
+}
+
+
+#navbarToggler
+{
+  text-align: center;
+}
+
+#centerForm
+{
+  display: inline-flex;
+  justify-content: center;
+ 
+}
+
+/* PROFILE PAGE STYLES */
+body{
+  margin-top:20px;
+  color: #1a202c;
+  text-align: left;
+  background-color: #e2e8f0;    
+}
+.main-body {
+  padding: 15px;
+}
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+
+.gutters-sm {
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.mb-3, .my-3 {
+  margin-bottom: 1rem!important;
+}
+
+.bg-gray-300 {
+  background-color: #e2e8f0;
+}
+.h-100 {
+  height: 100%!important;
+}
+.shadow-none {
+  box-shadow: none!important;
+}
+
+/* MOVIE LIST STYLING */
+
+.column 
+{
+  text-align: center;
+  float: left;
+  width: 20%;
+
+}
+
+#movieList{
+
+  margin-left: 55px;
+}
+
+.row::after 
+{
+  content: "";
+  clear: both;
+  display: table;
+}
+.container {
+
+  position: relative;
+  width: 100%;
+  height: 400px;
+  max-width: 400px;
+}
+
+.image{
+  opacity: 1;
+  display: block; 
+  transition: .5s ease;
+  backface-visibility: hidden;
+  transition: .5s ease;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#imageLink{
+
+  width: 100%;
+  height: 100%;
+}
+
+.middle {
+  transition: .5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.text {
+  color: black;
+  font-size: 28px;
+  padding: 16px 32px;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+/*STYLES FOR SEARCH */
+#Form
+{
+    margin-left: 70px;
+    text-align: left;
+   
+}
+#signUpBox
+{
+    margin-left: 10px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+   
+}

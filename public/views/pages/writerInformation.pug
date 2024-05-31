@@ -1,0 +1,52 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title SAMZE Movie Database
+  link(rel='shortcut icon' type='image/x-icon' href='/pictures/DBLogo.png')
+  // Custom CSS
+  link(rel='stylesheet' href='/mainCSS/navbarStyles.css')
+  link(rel='stylesheet' href='/mainCSS/movieListStyles.css')
+  link(href='/css/bootstrap.css' rel='stylesheet')
+  link(href='/css/bootstrap-grid.min.css' rel='stylesheet')
+  // Material Design Bootstrap
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css' rel='stylesheet')
+
+include ../partials/header
+
+div
+  br
+  h1(style='text-align:center') #{writer.name}
+  .card(style='left: 30%; width: 50rem; margin-top: 30px;')
+    .card-body
+      div(style='clear: both')
+        h5.card-title(style='float: left;')  #{writer.name}
+        h5.card-title(style='float: right;')
+      div(style='clear: both')
+      a(href='#' style='float: left;')
+        br
+        | Followers: #{writer.followers.length}
+        p
+    ul.list-group.list-group-flush
+      li.list-group-item
+        a(href='#') Frequent Collaborators
+
+br
+br
+div#movieList
+  h1(style='text-align: left;')
+      b Films that #{writer.name} starred in:
+      br
+      br
+  div.row#briefInfo
+    each movie in movies
+        div.column
+          div.container  
+            h3 #{movie.Title}
+            a#imageLink(href ='/movieList/' + movie.Title)
+              img.image(src= movie.Poster, alt="" width="200px" height = "300px")
+            div.middle
+              a#imageLink(href = '/movieList/' + movie.Title)
+                div.text View More
+
+include ../partials/footer
