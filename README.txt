@@ -62,6 +62,12 @@ Other Modules to Download using NPM Install
 
 Initializing the MongoDB
 ------------------------
+  1. Install MongoDB Compass: https://www.mongodb.com/try/download/compass
+  2. Open MongoDB Compass and enter a connection string (e.g., mongodb://localhost:27017)
+  3. Create a new collection by clicking "Create Collection."
+  4. Import JSON File Data by clicking "Add Data" > "Import File" > Select movies.json, users.json, reviews.json
+  5. Once JSON files are selected, click "Import" to import data
+  6. Verify that the collection to ensure import was successful
 
 
 Server Instructions
