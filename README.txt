@@ -2,7 +2,7 @@ Project:
   Movie Theatre Database
 
 Partners: 
-  Satyan Thayaparan (101111952) and Hamze Elmi (101118002)
+  Satyan Thayaparan and Hamze Elmi
 
 Files Containining and Handling Server Requests 
 ------------------------------------------------------------
@@ -46,12 +46,6 @@ Pug Files (Pages and Partials)
         - writerInformation.pug
         - writerList.pug
 
-Openstack Instance information
-------------------------------
-Floating IP Address: 134.117.129.225
-Username: student
-Password: thayaparan1
-
 Install Instructions For Node.js:
 ---------------------------------
   1. Proceed to https://nodejs.org/en/download/ on your web browser
@@ -65,6 +59,10 @@ Other Modules to Download using NPM Install
     - pug
     - connect-flash
     - express-sessions
+
+Initializing the MongoDB
+------------------------
+
 
 Server Instructions
 -------------------
